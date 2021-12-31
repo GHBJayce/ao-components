@@ -1,0 +1,40 @@
+{
+  "name": "ao-components",
+  "version": "0.0.1",
+  "author": "GHBJayce",
+  "description": "This is a self built general component library.",
+  "keywords": [
+    "vue",
+    "vue3",
+    "vite",
+    "vue-components",
+    "ant-design-vue",
+    "ui-components",
+    "components",
+    "bootstrap5"
+  ],
+  "main": "dist/ao-components.min.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GHBJayce/ao-components.git"
+  },
+  "bugs": {
+    "url": "https://github.com/GHBJayce/ao-components/issues"
+  },
+  "homepage": "https://github.com/GHBJayce/ao-components#readme",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build --emptyOutDir",
+    "serve": "vite preview"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.9.3",
+    "ant-design-vue": "^2.2.8",
+    "j-weapons": "^1.4.1",
+    "moment": "^2.29.1",
+    "rollup-plugin-external-globals": "^0.6.1",
+    "vite": "^2.6.4",
+    "vue": "^3.2.26"
+  }
+}
