@@ -16,7 +16,7 @@
 
       <a-col :span="24">
         <div class="ps-5 pt-2">
-          <div v-html="v.content" class="text-start"></div>
+          <div v-html="v.content" class="text-start text-break"></div>
 
           <div class="d-flex align-items-center mt-2">
             <i class="fa fa-thumbs-o-up"></i>
@@ -41,7 +41,7 @@
               </a-col>
 
               <a-col :span="24">
-                <div v-html="vv.content" class="text-start ps-5 pt-2"></div>
+                <div v-html="vv.content" class="text-start text-break ps-5 pt-2"></div>
               </a-col>
 
               <a-col :span="24">
