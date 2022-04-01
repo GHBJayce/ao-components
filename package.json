@@ -31,7 +31,7 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.9.3",
     "ant-design-vue": "^2.2.8",
-    "j-weapons": "^1.4.1",
+    "j-weapons": "^1.5.0",
     "moment": "^2.29.1",
     "rollup-plugin-external-globals": "^0.6.1",
     "vite": "^2.6.4",

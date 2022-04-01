@@ -1,7 +1,9 @@
 import Comment from './comment/index.js'
+import Tabs from './tabs/index.js'
 
 const components = [
-    Comment
+    Comment,
+    Tabs
 ]
 
 const install = function (app) {
@@ -13,7 +15,8 @@ const install = function (app) {
 const AoComponents = {
     version: '0.0.2',
     install,
-    Comment
+    Comment,
+    Tabs
 }
 
 if (typeof window !== 'undefined') {
