@@ -1,5 +1,5 @@
 <template>
-  <a-tabs v-model:activeKey="data.key" :type="getTabType()" :hideAdd="true" @edit="edit">
+  <a-tabs v-model:activeKey="data.key" :type="getTabType()" :hideAdd="true" :tabPosition="data.position" :size="data.size" :tabBarGutter="data.gutter" @edit="edit">
     <a-tab-pane v-for="item in data.items" :key="getPaneKey(item)" :tab="item.name" :closable="item.closable">
       <slot :item="item">{{ item.content }}</slot>
       <slot v-if="data.key === item.key" :item="item" :name="'content-'+item.key"></slot>
@@ -39,6 +39,10 @@ export default defineComponent({
         props.data.items = props.data.items.filter((item: {key: any}) => {
           return item.key !== key
         })
+        const firstTabItem = JW.getFirstVal(props.data.items)
+        if (!JW.isEmpty(firstTabItem)) {
+          props.data.key = firstTabItem.key
+        }
         return
       }
       const nextKey = getTabNextKey()

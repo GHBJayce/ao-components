@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import App from './App.vue'
+import App from './tab.vue'
 import Antd from 'ant-design-vue'
 import moment from 'moment'
 import components from '../packages/components/index'

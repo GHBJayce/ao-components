@@ -19,9 +19,9 @@
           <div v-html="v.content" class="text-start text-break"></div>
 
           <div class="d-flex align-items-center mt-2">
-            <i class="fa fa-thumbs-o-up"></i>
+            <i class="bi bi-hand-thumbs-up"></i>
             <span class="ps-1 pt-1">{{ v.likeCount }}</span>
-            <i class="fa fa-commenting-o ms-3"></i>
+            <i class="bi bi-chat-dots ms-3"></i>
             <span class="ps-1 pt-1">{{ v.replyCount }}</span>
           </div>
 
@@ -46,9 +46,9 @@
 
               <a-col :span="24">
                 <div class="d-flex align-items-center ps-5 pt-2">
-                  <i class="fa fa-thumbs-o-up"></i>
+                  <i class="bi bi-hand-thumbs-up"></i>
                   <span class="ps-1 pt-1">{{ vv.likeCount }}</span>
-                  <i class="fa fa-commenting-o ms-3"></i>
+                  <i class="bi bi-chat-dots ms-3"></i>
                   <span class="ps-1 pt-1">{{ vv.replyCount }}</span>
                 </div>
               </a-col>
