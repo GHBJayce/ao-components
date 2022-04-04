@@ -1,9 +1,13 @@
 import Comment from './comment/index.js'
-import Tabs from './tabs/index.js'
+import Tab from './tab/index.js'
+import Preview from './preview/index.js'
+import Tree from './tree/index.js'
 
 const components = [
     Comment,
-    Tabs
+    Tab,
+    Preview,
+    Tree,
 ]
 
 const install = function (app) {
@@ -16,7 +20,9 @@ const AoComponents = {
     version: '0.0.2',
     install,
     Comment,
-    Tabs
+    Tab,
+    Preview,
+    Tree,
 }
 
 if (typeof window !== 'undefined') {

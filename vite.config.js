@@ -24,13 +24,17 @@ export default defineConfig({
     },
     rollupOptions: {
       // 确保外部化处理那些你不想打包进库的依赖
-      external: ['vue', 'ant-design-vue', 'moment', 'j-weapons'],
+      external: ['vue', 'ant-design-vue', 'moment', 'j-weapons', 'v-viewer', 'vditor'],
       plugins: [
         externalGlobals({
           vue: "Vue",
           "ant-design-vue": "antd",
           moment: "moment",
           'j-weapons': 'JW',
+          'v-viewer': 'VueViewer',
+          // 'axios': 'axios',
+          // 'vue-axios': 'VueAxios',
+          'vditor': 'Vditor',
         }),
       ],
       // output: {

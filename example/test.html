@@ -4,32 +4,57 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ao-components test</title>
-    <link rel="stylesheet" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.0.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://unpkg.com/ant-design-vue@2.2.8/dist/antd.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/viewerjs@1.10.4/dist/viewer.css">
+    <link rel="stylesheet" href="https://unpkg.com/vditor@3.8.13/dist/index.css">
   </head>
   <body>
     <div id="app">
       <a-button>1231</a-button>
       <ao-comment :data="comment"></ao-comment>
+      <ao-preview :data="previewData"></ao-preview>
     </div>
+    <script src="https://unpkg.com/j-weapons@1.4.1/dist/j-weapons.min.js"></script>
     <script src="https://unpkg.com/vue@3.2.26/dist/vue.global.js"></script>
     <script src="https://unpkg.com/ant-design-vue@2.2.8/dist/antd.min.js"></script>
     <script src="https://unpkg.com/moment@2.29.1/moment.js"></script>
-    <script src="https://unpkg.com/j-weapons@1.4.1/dist/j-weapons.min.js"></script>
+    <script src="https://unpkg.com/viewerjs@1.10.4/dist/viewer.js"></script>
+    <script src="https://unpkg.com/v-viewer@3.0.10/dist/index.umd.js"></script>
+    <script src="https://unpkg.com/vditor@3.8.13/dist/index.min.js"></script>
+    <script src="https://unpkg.com/axios@0.26.1/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue-axios@3.4.1/dist/vue-axios.common.min.js"></script>
     <script src="../dist/ao-components.min.js"></script>
     <script>
       const app = Vue.createApp({
         data() {
           return {
             comment: {
-              items: JSON.parse(''),
+              items: JSON.parse('{}'),
               more: true
+            },
+            previewData: {
+              name: "vue.png",
+              path: "/Volumes/MacSoftware/project/front-end/ao-components/vue.png",
+              // downloadUrl: "https://aliyuncdn.antdv.com/vue.png",
+              //downloadUrl: "https://upload.jianshu.io/users/upload_avatars/7108739/4cb0872d-ff26-46c1-98d5-c8e6ddd9d5c7.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/90/h/90/format/webp",
+              // downloadUrl: "https://github.com/GHBJayce/Assets/blob/master/RightClickMenu/demo_v2.0.0.gif?raw=true",
+              // downloadUrl: "https://github.com/GHBJayce/Assets/blob/feat/v1.0.0/computer/network/%E7%BD%91%E7%BB%9C%E4%B8%83%E5%B1%82%E6%A8%A1%E5%9E%8B.jpg?raw=true",
+              // downloadUrl: "https://raw.githubusercontent.com/GHBJayce/Assets/feat/v1.0.0/computer/network/HTTPS%E6%8F%A1%E6%89%8B%E8%BF%87%E7%A8%8B(SSL-TLS)%20.jpg",
+              // downloadUrl: "https://raw.githubusercontent.com/GHBJayce/j-weapons/master/readme.md",
+              downloadUrl: "https://raw.githubusercontent.com/GHBJayce/j-weapons/master/src/common/common.js",
+              size: 65687,
+              // type: "file",
+              // extend: "png",
+              // extend: "md",
+              extend: "js",
+              updatedAt: 1648973561
             }
           }
         },
       });
-      app.use(antd).use(AoComponents).use(moment);
+      app.use(antd).use(moment).use(VueViewer.default).use(AoComponents);
       const vm = app.mount('#app');
     </script>
 </body>

@@ -1,10 +1,10 @@
 <template>
   {{ tabs }}
-  <ao-tabs :data="tabs">
+  <ao-tab :data="tabs">
     <template #default="slotContent">
       {{ slotContent }}
-      <ao-tabs :data="tabs1">
-      </ao-tabs>
+      <ao-tab :data="tabs1">
+      </ao-tab>
     </template>
     <template #content-1="slotContent">
       {{ slotContent }}
@@ -13,7 +13,7 @@
     <template #content-abc="slotContent">
       {{ slotContent }}
     </template>
-  </ao-tabs>
+  </ao-tab>
 </template>
 
 <script>
@@ -22,7 +22,7 @@ export default defineComponent({
   setup() {
     const data = reactive({
       tabs: {
-        key: 1,
+        _key: 1,
         type: 'card',
         closable: true,
         position: 'left',
@@ -39,7 +39,7 @@ export default defineComponent({
         }]
       },
       tabs1: {
-        key: 0,
+        _key: 0,
         type: 'card',
         items: [{
           //key: 0,
@@ -55,7 +55,7 @@ export default defineComponent({
         // data.tabs.type = 'line'
         // console.log(data.tabs)
         data.tabs.items.push({
-          key: 'abc',
+          _key: 'abc',
           name: 'abc'
         })
       }, 3000)
