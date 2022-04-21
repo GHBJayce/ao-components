@@ -7,12 +7,11 @@
 <script lang="ts">
 import JW from 'j-weapons'
 import {
-  defineComponent,
   toRefs,
   reactive,
   onMounted,
 } from 'vue'
-export default defineComponent({
+export default {
   name: 'ao-tree',
   props: {
     data: Object,
@@ -65,5 +64,5 @@ export default defineComponent({
       loadData,
     }
   }
-})
+}
 </script>

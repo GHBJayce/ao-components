@@ -24,13 +24,12 @@ import axios from 'axios'
 import Vditor from 'vditor'
 import {message} from 'ant-design-vue'
 import {
-  defineComponent,
   toRefs,
   reactive,
   onMounted,
   watch,
 } from 'vue'
-export default defineComponent({
+export default {
   name: 'ao-preview',
   props: {
     data: Object,
@@ -107,5 +106,5 @@ export default defineComponent({
       isCode,
     }
   }
-})
+}
 </script>

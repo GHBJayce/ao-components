@@ -10,23 +10,22 @@
 <script lang="ts">
 import JW from 'j-weapons'
 import {
-  defineComponent,
   toRefs,
   reactive
 } from 'vue'
-export default defineComponent({
+export default {
   name: 'ao-tab',
   props: {
     data: Object,
   },
   setup(props) {
     const data = reactive({})
-    const getPaneKey = (item) => {
+    const getPaneKey = (item: {_key: any}) => {
       item._key = item._key === undefined ? getTabNextKey() : item._key
       return item._key
     }
     const getTabNextKey = () => {
-      let keys = JW.pluck(props.data.items, '_key').filter((item) => {
+      let keys = JW.pluck(props.data.items, '_key').filter((item: Number) => {
         return JW.getType(item) === 'number'
       })
       return JW.isEmpty(keys) ? 0 : Math.max(...keys) + 1
@@ -58,5 +57,5 @@ export default defineComponent({
       getPaneKey,
     }
   }
-})
+}
 </script>

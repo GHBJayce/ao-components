@@ -215,7 +215,7 @@ var Component = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render
 Component.install = function(Vue2) {
   Vue2.component(Component.name, Component);
 };
-const _sfc_main$2 = Vue.defineComponent({
+const _sfc_main$2 = {
   name: "ao-tab",
   props: {
     data: Object
@@ -258,24 +258,24 @@ const _sfc_main$2 = Vue.defineComponent({
       getPaneKey
     });
   }
-});
+};
 function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_a_tab_pane = Vue.resolveComponent("a-tab-pane");
   const _component_a_tabs = Vue.resolveComponent("a-tabs");
   return Vue.openBlock(), Vue.createBlock(_component_a_tabs, {
-    activeKey: _ctx.data._key,
-    "onUpdate:activeKey": _cache[0] || (_cache[0] = ($event) => _ctx.data._key = $event),
-    type: _ctx.getTabType(),
+    activeKey: $props.data._key,
+    "onUpdate:activeKey": _cache[0] || (_cache[0] = ($event) => $props.data._key = $event),
+    type: $setup.getTabType(),
     hideAdd: true,
-    tabPosition: _ctx.data.position,
-    size: _ctx.data.size,
-    tabBarGutter: _ctx.data.gutter,
-    onEdit: _ctx.edit
+    tabPosition: $props.data.position,
+    size: $props.data.size,
+    tabBarGutter: $props.data.gutter,
+    onEdit: $setup.edit
   }, {
     default: Vue.withCtx(() => [
-      (Vue.openBlock(true), Vue.createElementBlock(Vue.Fragment, null, Vue.renderList(_ctx.data.items, (item) => {
+      (Vue.openBlock(true), Vue.createElementBlock(Vue.Fragment, null, Vue.renderList($props.data.items, (item) => {
         return Vue.openBlock(), Vue.createBlock(_component_a_tab_pane, {
-          key: _ctx.getPaneKey(item),
+          key: $setup.getPaneKey(item),
           tab: item.name,
           closable: item.closable
         }, {
@@ -283,7 +283,7 @@ function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
             Vue.renderSlot(_ctx.$slots, "default", { item }, () => [
               Vue.createTextVNode(Vue.toDisplayString(item.content), 1)
             ]),
-            _ctx.data._key === item._key ? Vue.renderSlot(_ctx.$slots, "content-" + item._key, {
+            $props.data._key === item._key ? Vue.renderSlot(_ctx.$slots, "content-" + item._key, {
               key: 0,
               item
             }) : Vue.createCommentVNode("", true)
@@ -1345,7 +1345,7 @@ axios$1.isAxiosError = isAxiosError;
 axios$2.exports = axios$1;
 axios$2.exports.default = axios$1;
 var axios = axios$2.exports;
-const _sfc_main$1 = Vue.defineComponent({
+const _sfc_main$1 = {
   name: "ao-preview",
   props: {
     data: Object
@@ -1422,7 +1422,7 @@ const _sfc_main$1 = Vue.defineComponent({
       isCode
     });
   }
-});
+};
 const _hoisted_1 = { class: "p-2" };
 const _hoisted_2 = { class: "ps-3" };
 const _hoisted_3 = { key: 0 };
@@ -1444,18 +1444,18 @@ function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
   const _directive_viewer = Vue.resolveDirective("viewer");
   return Vue.openBlock(), Vue.createElementBlock("div", _hoisted_1, [
     Vue.createElementVNode("ol", _hoisted_2, [
-      Vue.createElementVNode("li", null, Vue.toDisplayString(_ctx.data.path), 1),
-      Vue.createElementVNode("li", null, Vue.toDisplayString(_ctx.toDurationTime(_ctx.data.updatedAt)), 1)
+      Vue.createElementVNode("li", null, Vue.toDisplayString($props.data.path), 1),
+      Vue.createElementVNode("li", null, Vue.toDisplayString($setup.toDurationTime($props.data.updatedAt)), 1)
     ]),
-    _ctx.isImage() ? Vue.withDirectives((Vue.openBlock(), Vue.createElementBlock("div", _hoisted_3, [
+    $setup.isImage() ? Vue.withDirectives((Vue.openBlock(), Vue.createElementBlock("div", _hoisted_3, [
       Vue.createElementVNode("img", {
-        alt: _ctx.data.name,
-        src: _ctx.data.downloadUrl,
+        alt: $props.data.name,
+        src: $props.data.downloadUrl,
         class: "rounded mw-100"
       }, null, 8, _hoisted_4)
     ])), [
       [_directive_viewer]
-    ]) : _ctx.isCode() ? (Vue.openBlock(), Vue.createElementBlock(Vue.Fragment, { key: 1 }, [], 64)) : _ctx.isMarkdown() ? (Vue.openBlock(), Vue.createElementBlock(Vue.Fragment, { key: 2 }, [], 64)) : (Vue.openBlock(), Vue.createElementBlock("div", _hoisted_5, _hoisted_9)),
+    ]) : $setup.isCode() ? (Vue.openBlock(), Vue.createElementBlock(Vue.Fragment, { key: 1 }, [], 64)) : $setup.isMarkdown() ? (Vue.openBlock(), Vue.createElementBlock(Vue.Fragment, { key: 2 }, [], 64)) : (Vue.openBlock(), Vue.createElementBlock("div", _hoisted_5, _hoisted_9)),
     _hoisted_10
   ]);
 }
@@ -1463,7 +1463,7 @@ var Preview = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render$1
 Preview.install = function(Vue2) {
   Vue2.component(Preview.name, Preview);
 };
-const _sfc_main = Vue.defineComponent({
+const _sfc_main = {
   name: "ao-tree",
   props: {
     data: Object,
@@ -1518,17 +1518,17 @@ const _sfc_main = Vue.defineComponent({
       loadData
     });
   }
-});
+};
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_a_tree = Vue.resolveComponent("a-tree");
   return Vue.openBlock(), Vue.createElementBlock("div", null, [
     Vue.createVNode(_component_a_tree, {
-      "tree-data": _ctx.data.items,
-      "load-data": _ctx.loadData,
+      "tree-data": $props.data.items,
+      "load-data": $setup.loadData,
       "replace-fields": _ctx.fieldsMapping,
-      selectable: _ctx.data.selectable,
-      onSelect: _ctx.clickNode,
-      onExpand: _ctx.expandNode
+      selectable: $props.data.selectable,
+      onSelect: $setup.clickNode,
+      onExpand: $setup.expandNode
     }, null, 8, ["tree-data", "load-data", "replace-fields", "selectable", "onSelect", "onExpand"])
   ]);
 }
